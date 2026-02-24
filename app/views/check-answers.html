@@ -1,0 +1,352 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+    <h2 class="govuk-heading-m">Personal details</h2>
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "First name(s)" },
+    value: { text: data['firstName'] },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 1"
+    }]
+    }
+    },
+    {
+    key: { text: "Family name" },
+    value: { text: "Answer 2" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 2"
+    }]
+    }
+    },
+    {
+    key: { text: "Address" },
+    value: { text: "Answer 3" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 3"
+    }]
+    }
+    },
+    {
+    key: { text: "Home telephone number" },
+    value: { text: "Answer 4" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 4"
+    }]
+    }
+    },
+    {
+    key: { text: "Mobile telephone number" },
+    value: { text: "Answer 5" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 5"
+    }]
+    }
+    },
+    {
+    key: { text: "Email" },
+    value: { text: "Answer 6" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 6"
+    }]
+    }
+    },
+    {
+    key: { text: "Date of birth" },
+    value: { text: "Answer 7" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 7"
+    }]
+    }
+    },
+    {
+    key: { text: "National insurance number" },
+    value: { text: "Answer 8" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 8"
+    }]
+    }
+    },
+    {
+    key: { text: "Vehicle registration number" },
+    value: { text: "Answer 9" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 9"
+    }]
+    }
+    },
+    {
+    key: { text: "Are you the registered owner of the vehicle?" },
+    value: { text: "Answer 10" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 10"
+    }]
+    }
+    }
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Income and outgoings
+    </h2>
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "For all your income and outgoings, please indicate if these figures are:" },
+    value: { text: "Answer 1" },
+    actions: {
+    items: [{
+    href: "#",
+    text: "Change",
+    visuallyHiddenText: "Question 1"
+    }]
+    }
+    }
+    ]
+    }) }}
+    <h2 class="govuk-heading-m">Income details</h2>
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "Occupation" },
+    value: { text: "Answer 1" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 1" }] }
+    },
+    {
+    key: { text: "Employer's name" },
+    value: { text: "Answer 2" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 2" }] }
+    },
+    {
+    key: { text: "Employer's address" },
+    value: { text: "Answer 3" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 3" }] }
+    },
+    {
+    key: { text: "Employer's telephone number" },
+    value: { text: "Answer 4" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 4" }] }
+    },
+    {
+    key: { text: "I am self employed as" },
+    value: { text: "Answer 5" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 5" }] }
+    },
+    {
+    key: { text: "Your take home pay" },
+    value: { text: "Answer 6" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 6" }] }
+    },
+    {
+    key: { text: "Any other income" },
+    value: { text: "Answer 7" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 7" }] }
+    },
+    {
+    key: { text: "Total income" },
+    value: { text: "Answer 8" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 8" }] }
+    },
+    {
+    key: { text: "please state since when" },
+    value: { text: "Answer 9" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 9" }] }
+    },
+    {
+    key: { text: "Are you in receipt of benefits?" },
+    value: { text: "Answer 10" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 10" }] }
+    },
+    {
+    key: { text: "If Yes, please state below which benefit(s) you recieve." },
+    value: { text: "Answer 11" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 11" }] }
+    }
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Outgoings</h2>
+
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "Question 1" },
+    value: { text: "Answer 1" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 1" }] }
+    },
+    {
+    key: { text: "Question 2" },
+    value: { text: "Answer 2" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 2" }] }
+    },
+    {
+    key: { text: "Question 3" },
+    value: { text: "Answer 3" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 3" }] }
+    },
+    {
+    key: { text: "Question 4" },
+    value: { text: "Answer 4" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 4" }] }
+    },
+    {
+    key: { text: "Question 5" },
+    value: { text: "Answer 5" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 5" }] }
+    },
+    {
+    key: { text: "Question 6" },
+    value: { text: "Answer 6" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 6" }] }
+    },
+    {
+    key: { text: "Question 7" },
+    value: { text: "Answer 7" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 7" }] }
+    },
+    {
+    key: { text: "Question 8" },
+    value: { text: "Answer 8" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 8" }] }
+    },
+    {
+    key: { text: "Question 9" },
+    value: { text: "Answer 9" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 9" }] }
+    },
+    {
+    key: { text: "Question 10" },
+    value: { text: "Answer 10" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 10" }] }
+    },
+    {
+    key: { text: "Question 11" },
+    value: { text: "Answer 11" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 11" }] }
+    },
+    {
+    key: { text: "Question 12" },
+    value: { text: "Answer 12" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 12" }] }
+    },
+    {
+    key: { text: "Question 13" },
+    value: { text: "Answer 13" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 13" }] }
+    },
+    {
+    key: { text: "Question 14" },
+    value: { text: "Answer 14" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 14" }] }
+    },
+    {
+    key: { text: "Question 15" },
+    value: { text: "Answer 15" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 15" }] }
+    },
+    {
+    key: { text: "Question 16" },
+    value: { text: "Answer 16" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 16" }] }
+    },
+    {
+    key: { text: "Question 17" },
+    value: { text: "Answer 17" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 17" }] }
+    },
+    {
+    key: { text: "Question 18" },
+    value: { text: "Answer 18" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 18" }] }
+    }
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Other information</h2>
+
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "Question 1" },
+    value: { text: "Answer 1" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 1" }] }
+    },
+    {
+    key: { text: "Question 2" },
+    value: { text: "Answer 2" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 2" }] }
+    },
+    {
+    key: { text: "Question 3" },
+    value: { text: "Answer 3" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 3" }] }
+    },
+    {
+    key: { text: "Question 4" },
+    value: { text: "Answer 4" },
+    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 4" }] }
+    }
+    ]
+    }) }}
+
+
+
+    <form action="/confirmation" method="post" novalidate>
+
+      {{ govukButton({
+      text: "Submit"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

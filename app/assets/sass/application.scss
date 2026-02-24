@@ -1,0 +1,40 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+
+// Add extra styles here
+
+
+.autocomplete__wrapper * {
+    @include govuk-typography-common();
+}
+
+.govuk-header {
+    background-color: #0b0c0c !important;
+    color: #ffffff !important;
+}
+
+.govuk-header__container,
+.govuk-header__content,
+.govuk-header__logo {
+    background-color: #0b0c0c !important;
+}
+
+.govuk-header__link {
+    background-color: #0b0c0c !important;
+}
+
+.govuk-header__link:visited,
+.govuk-header__link:hover,
+.govuk-header__link:focus {
+    color: #ffffff !important;
+}
+
+.govuk-header__logotype-text {
+    color: #ffffff !important;
+}
+
+.govuk-header__logotype-crown {
+    fill: #ffffff !important;
+}

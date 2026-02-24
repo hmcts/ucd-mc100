@@ -1,0 +1,8 @@
+{
+  "serviceName": "Statement of assets and other financial circumstances",
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": false
+    }
+  }
+}

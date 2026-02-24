@@ -1,0 +1,40 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% block header %}
+{{ govukHeader ({
+homepageUrl: "/index",
+serviceName: "Statement of assets and other financial circumstances",
+serviceUrl: "/index"
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by
+                email</a>.
+        </span>
+    </p>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+{% endblock %}
+
+{% block stylesheets %}
+{{ super() }}
+<link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}

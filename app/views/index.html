@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <h1 class="govuk-heading-xl">
+      Statement of assets and other financial circumstances
+    </h1>
+
+
+    <form class="form" action="/start" method="post">
+      {{ govukButton({
+      text: "Start prototype"
+      }) }}
+
+    </form>
+
+    </ul>
+  </div>
+</div>
+
+
+</form>
+
+{% endblock %}
