@@ -34,7 +34,7 @@ href: "javascript:window.history.back()"
     },
     {
     key: { text: "Family name" },
-    value: { text: "Answer 2" },
+    value: { text: data['familyName'] },
     actions: {
     items: [{
     href: "#",
@@ -45,18 +45,19 @@ href: "javascript:window.history.back()"
     },
     {
     key: { text: "Address" },
-    value: { text: "Answer 3" },
+    value: { text: [data['addressLine1'], data['addressLine2'], data['addressTown'], data['addressCounty'],
+    data['addressPostcode']].join(', ') },
     actions: {
     items: [{
-    href: "#",
+    href: "/address",
     text: "Change",
-    visuallyHiddenText: "Question 3"
+    visuallyHiddenText: "Address"
     }]
     }
     },
     {
     key: { text: "Home telephone number" },
-    value: { text: "Answer 4" },
+    value: { text: data['homePhone'] },
     actions: {
     items: [{
     href: "#",
@@ -67,7 +68,7 @@ href: "javascript:window.history.back()"
     },
     {
     key: { text: "Mobile telephone number" },
-    value: { text: "Answer 5" },
+    value: { text: data['mobilePhone'] },
     actions: {
     items: [{
     href: "#",
@@ -78,7 +79,7 @@ href: "javascript:window.history.back()"
     },
     {
     key: { text: "Email" },
-    value: { text: "Answer 6" },
+    value: { text: data['email'] },
     actions: {
     items: [{
     href: "#",
@@ -89,7 +90,7 @@ href: "javascript:window.history.back()"
     },
     {
     key: { text: "Date of birth" },
-    value: { text: "Answer 7" },
+    value: { text: [data['dobDay'], data['dobMonth'], data['dobYear']].join(' ') },
     actions: {
     items: [{
     href: "#",
@@ -100,7 +101,7 @@ href: "javascript:window.history.back()"
     },
     {
     key: { text: "National insurance number" },
-    value: { text: "Answer 8" },
+    value: { text: data['niNumber'] },
     actions: {
     items: [{
     href: "#",
@@ -111,7 +112,7 @@ href: "javascript:window.history.back()"
     },
     {
     key: { text: "Vehicle registration number" },
-    value: { text: "Answer 9" },
+    value: { text: data['vehicleNumber'] },
     actions: {
     items: [{
     href: "#",
@@ -122,7 +123,7 @@ href: "javascript:window.history.back()"
     },
     {
     key: { text: "Are you the registered owner of the vehicle?" },
-    value: { text: "Answer 10" },
+    value: { text: data['vehicleOwner'] },
     actions: {
     items: [{
     href: "#",
@@ -141,7 +142,7 @@ href: "javascript:window.history.back()"
     rows: [
     {
     key: { text: "For all your income and outgoings, please indicate if these figures are:" },
-    value: { text: "Answer 1" },
+    value: { text: data['outgoingsTimescale'] },
     actions: {
     items: [{
     href: "#",
@@ -157,57 +158,59 @@ href: "javascript:window.history.back()"
     rows: [
     {
     key: { text: "Occupation" },
-    value: { text: "Answer 1" },
+    value: { text: data['occupation'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 1" }] }
     },
     {
     key: { text: "Employer's name" },
-    value: { text: "Answer 2" },
+    value: { text: data['employerName'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 2" }] }
     },
     {
     key: { text: "Employer's address" },
-    value: { text: "Answer 3" },
+    value: { text: [data['employeraddressLine1'], data['employeraddressLine2'], data['employeraddressTown'],
+    data['employeraddressCounty'],
+    data['employeraddressPostcode']].join(', ') },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 3" }] }
     },
     {
     key: { text: "Employer's telephone number" },
-    value: { text: "Answer 4" },
+    value: { text: data['employerNumber'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 4" }] }
     },
     {
     key: { text: "I am self employed as" },
-    value: { text: "Answer 5" },
+    value: { text: data['selfEmployed'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 5" }] }
     },
     {
     key: { text: "Your take home pay" },
-    value: { text: "Answer 6" },
+    value: { text: data['takehomepay'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 6" }] }
     },
     {
     key: { text: "Any other income" },
-    value: { text: "Answer 7" },
+    value: { text: data['otherIncome'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 7" }] }
     },
     {
     key: { text: "Total income" },
-    value: { text: "Answer 8" },
+    value: { text: data['totalIncome'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 8" }] }
     },
     {
     key: { text: "please state since when" },
-    value: { text: "Answer 9" },
+    value: { text: data['notEmployed'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 9" }] }
     },
     {
     key: { text: "Are you in receipt of benefits?" },
-    value: { text: "Answer 10" },
+    value: { text: data['benefits'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 10" }] }
     },
     {
     key: { text: "If Yes, please state below which benefit(s) you recieve." },
-    value: { text: "Answer 11" },
+    value: { text: data['whichBenefits'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 11" }] }
     }
     ]
@@ -218,94 +221,71 @@ href: "javascript:window.history.back()"
     {{ govukSummaryList({
     rows: [
     {
-    key: { text: "Question 1" },
-    value: { text: "Answer 1" },
+    key: { text: "Rent, mortgate or lodgings" },
+    value: { text: data['rent'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 1" }] }
     },
     {
-    key: { text: "Question 2" },
-    value: { text: "Answer 2" },
+    key: { text: "Council tax" },
+    value: { text: data['tax'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 2" }] }
     },
     {
-    key: { text: "Question 3" },
-    value: { text: "Answer 3" },
+    key: { text: "Insurance" },
+    value: { text: data['insurance'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 3" }] }
     },
     {
-    key: { text: "Question 4" },
-    value: { text: "Answer 4" },
+    key: { text: "Child maintenance" },
+    value: { text: data['childMaintenance'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 4" }] }
     },
     {
-    key: { text: "Question 5" },
-    value: { text: "Answer 5" },
+    key: { text: "Travel expenses" },
+    value: { text: data['travel'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 5" }] }
     },
     {
-    key: { text: "Question 6" },
-    value: { text: "Answer 6" },
+    key: { text: "Utility bills" },
+    value: { text: data['bills'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 6" }] }
     },
     {
-    key: { text: "Question 7" },
-    value: { text: "Answer 7" },
+    key: { text: "Telephone" },
+    value: { text: data['telephoneBill'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 7" }] }
     },
     {
-    key: { text: "Question 8" },
-    value: { text: "Answer 8" },
+    key: { text: "Television subscription" },
+    value: { text: data['tv'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 8" }] }
     },
     {
-    key: { text: "Question 9" },
-    value: { text: "Answer 9" },
+    key: { text: "Other fines" },
+    value: { text: [data['otherFine1'], data['otherFine2'], data['otherFine3']].join(', ') },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 9" }] }
     },
     {
-    key: { text: "Question 10" },
-    value: { text: "Answer 10" },
+    key: { text: "County court orders" },
+    value: { text: data['countyCourt'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 10" }] }
     },
     {
-    key: { text: "Question 11" },
-    value: { text: "Answer 11" },
+    key: { text: "Loan repayments" },
+    value: { text: data['loans'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 11" }] }
     },
     {
-    key: { text: "Question 12" },
-    value: { text: "Answer 12" },
+    key: { text: "Other outgoings" },
+    value: { text: [data['otherOutgoings1'], data['otherOutgoings2'], data['otherOutgoings3'],
+    data['otherOutgoings4']].join(', ') },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 12" }] }
     },
     {
-    key: { text: "Question 13" },
-    value: { text: "Answer 13" },
+    key: { text: "Total outgoings" },
+    value: { text: data['totalOutgoings'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 13" }] }
-    },
-    {
-    key: { text: "Question 14" },
-    value: { text: "Answer 14" },
-    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 14" }] }
-    },
-    {
-    key: { text: "Question 15" },
-    value: { text: "Answer 15" },
-    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 15" }] }
-    },
-    {
-    key: { text: "Question 16" },
-    value: { text: "Answer 16" },
-    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 16" }] }
-    },
-    {
-    key: { text: "Question 17" },
-    value: { text: "Answer 17" },
-    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 17" }] }
-    },
-    {
-    key: { text: "Question 18" },
-    value: { text: "Answer 18" },
-    actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 18" }] }
+
     }
     ]
     }) }}
@@ -315,23 +295,24 @@ href: "javascript:window.history.back()"
     {{ govukSummaryList({
     rows: [
     {
-    key: { text: "Question 1" },
-    value: { text: "Answer 1" },
+    key: { text: "Total savings" },
+    value: { text: data['savings'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 1" }] }
     },
     {
-    key: { text: "Question 2" },
-    value: { text: "Answer 2" },
+    key: { text: "Partner's income including benefits" },
+    value: { text: data['partnerIncome'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 2" }] }
     },
     {
-    key: { text: "Question 3" },
-    value: { text: "Answer 3" },
+    key: { text: "Number of dependent children" },
+    value: { text: data['dependentChildren'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 3" }] }
     },
     {
-    key: { text: "Question 4" },
-    value: { text: "Answer 4" },
+    key: { text: "Please add any other information (for example any assets not mentioned above) that you believe the
+    court should know about here:" },
+    value: { text: data['otherInfo'] },
     actions: { items: [{ href: "#", text: "Change", visuallyHiddenText: "Question 4" }] }
     }
     ]
