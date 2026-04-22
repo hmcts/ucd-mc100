@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Questions about your spending
+    </h1>
+
+    <p>
+      The next set of questions relate to how much you spend. The figures you give will be used to help calculate the
+      amount you are fined.
+    </p>
+
+    <p>
+      Any figures you give can be estimates, but should be as accurate as possible.
+      If you do not give accurate figures, you may not be fined the correct amount. </p>
+
+    <p>If you intend to pay the fine in full straight away you can skip this section.
+    </p>
+
+    <form class="form" action="/spending-frequency" method="enter">
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue to spending questions
+        </button>
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Skip spending questions
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

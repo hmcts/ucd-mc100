@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="spending-source-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Your essential spending
+          </h1>
+        </legend>
+        <div id="waste-hint" class="govuk-hint">
+          Select the types of essentials you spend money on regularly.
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="spending-source-1" name="spending-source" type="checkbox"
+              value="employment">
+            <label class="govuk-label govuk-checkboxes__label" for="spending-source-1">
+              Rent or mortgage
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="spending-source-2" name="spending-source" type="checkbox"
+              value="Selfemployment">
+            <label class="govuk-label govuk-checkboxes__label" for="spending-source-2">
+              Travel - including train and car costs
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="spending-source-3" name="spending-source" type="checkbox"
+              value="benefits">
+            <label class="govuk-label govuk-checkboxes__label" for="spending-source-3">
+              Food
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="spending-source-4" name="spending-source" type="checkbox"
+              value="pension">
+            <label class="govuk-label govuk-checkboxes__label" for="spending-source-4">
+              Phone and internet
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="spending-source-5" name="spending-source" type="checkbox"
+              value="other">
+            <label class="govuk-label govuk-checkboxes__label" for="spending-source-5">
+              Other
+            </label>
+          </div>
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="spending-source-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  What is your total spending across all categories?
+                </h1>
+              </legend>
+              <div id="waste-hint" class="govuk-hint">
+                Enter your total spending for the period you chose in the previous question.
+
+
+              </div>
+
+              <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+              </div>
+
+
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+            </fieldset>
+          </div>
+
+          <form class="form" action="/anything-else" method="post">
+
+
+
+            {{ govukButton({
+            text: "Continue"
+            }) }}
+
+          </form>
+
+        </div>
+    </div>
+
+    {% endblock %}

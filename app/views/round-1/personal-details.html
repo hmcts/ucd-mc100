@@ -1,0 +1,198 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/round-1/weeks-months" method="get">
+
+      <h1 class="govuk-heading-l">
+        Personal details
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        First name(s)
+      </h2>
+
+      <div class="govuk-form-group">
+        <input class="govuk-input" id="first-name" name="firstName" type="text" spellcheck="false"
+          autocomplete="first-name">
+      </div>
+
+      <h2 class="govuk-heading-m">
+        Family name
+      </h2>
+
+      <div class="govuk-form-group">
+        <input class="govuk-input" id="family-name" name="familyName" type="text" spellcheck="false"
+          autocomplete="family-name">
+      </div>
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Address
+            </h1>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Address line 1
+          </label>
+          <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Address line 2 (optional)
+          </label>
+          <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text"
+            autocomplete="address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            County (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text"
+            autocomplete="postal-code">
+        </div>
+      </fieldset>
+
+      <h2 class="govuk-heading-m">
+        Home telephone number
+      </h2>
+
+      <div class="govuk-form-group">
+        <input class="govuk-input" id="home-phone" name="homePhone" type="text" spellcheck="false"
+          autocomplete="home-phone">
+      </div>
+
+      <h2 class="govuk-heading-m">
+        Mobile telephone number
+      </h2>
+
+      <div class="govuk-form-group">
+        <input class="govuk-input" id="mobile-phone" name="mobilePhone" type="text" spellcheck="false"
+          autocomplete="mobile-phone">
+      </div>
+
+      <h2 class="govuk-heading-m">
+        Email
+      </h2>
+
+      <div class="govuk-form-group">
+        <input class="govuk-input" id="email" name="email" type="text" spellcheck="false" autocomplete="email">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Date of birth
+            </h2>
+          </legend>
+          <div class="govuk-date-input" id="dob">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dobDay"
+                  type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dobMonth"
+                  type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dobYear"
+                  type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <h2 class="govuk-heading-m">
+        National insurance number
+      </h2>
+
+      <div class="govuk-form-group">
+        <input class="govuk-input" id="ni-number" name="niNumber" type="text" spellcheck="false"
+          autocomplete="ni-number">
+      </div>
+
+      <h2 class="govuk-heading-m">
+        Vehicle registration number
+      </h2>
+
+      <div class="govuk-form-group">
+        <input class="govuk-input" id="vehicle-number" name="vehicleNumber" type="text" spellcheck="false"
+          autocomplete="vehicle-number">
+      </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="vehicle-owner--hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Are you the registered owner of the vehicle?
+            </h2>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="vehicle-owner-yes" name="vehicleOwner" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="vehicle-owner-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="vehicle-owner-No" name="vehicleOwner" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="vehicle-owner-No">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+      text: "Save and continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

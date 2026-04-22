@@ -5,15 +5,12 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-<!-- Blank header with no service name for the start page -->
-{{ govukHeader() }}
+<header>
+  {{govukHeader()}}
+</header>
 {% endblock %}
 
-{% block beforeContent %}
 
-
-
-{% endblock %}
 
 {% block content %}
 
@@ -21,40 +18,39 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      <span class="govuk-caption-l">Make sure you can pay your fine</span>
-      Statement of assets and other financial information
+      Tell the court about your financial circumstances
     </h1>
 
+    <p>Complete this form either before going to court, or at court on the day of your hearing.</p>
+
+    <p>If you do not give the court your statement of assets and other financial circumstances, or the court does not
+      think you have given enough reliable information, it can make a decision it thinks fit about your financial
+      circumstances.</p>
 
     <p>
-      If you fail to provide the court with your statement of assets and other financial circumstances, or the court is
-      not satisfied that it has been given enough reliable information, it is entitled to make such decision as it
-      thinks fit about your financial circumstances. </p>
+      It is an offence to make a false statement or knowingly to fail to disclose material facts when providing the
+      court with a statement of your assets and financial circumstances, following an official request.
 
-
-    <p class="govuk-body">
-      <span class="govuk-!-font-weight-bold">Note:</span> When providing the court with a statement of your assets
-      and financial circumstances, following an official
-      request it is an offence to make a false statement or knowingly to fail to disclose material facts.
     </p>
 
     <p>
       If the court orders that you pay a fine or other financial imposition you will be required to pay as ordered by
-      the court, this could be on the day of imposition. Please bring a method of payment with you.
-
+      the court, this could be on the day of imposition. Bring a method of payment with you.
     </p>
 
 
-
-    <form class="form" action="/personal-details" method="post">
-
-      {{ govukButton({
-      text: "Start now"
-      }) }}
-
-    </form>
+    {{ govukButton({
+    text: "Start now",
+    href: "/full-name",
+    isStartButton: true
+    }) }}
 
   </div>
+
+
+
+
+
 
   <div class="govuk-grid-column-one-third">
 

@@ -1,0 +1,203 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/round-1/outgoings" method="get">
+      <h1 class="govuk-heading-l">
+        Income details
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        If you are employed
+      </h2>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="occupation">
+            Occupation
+          </label>
+        </h3>
+        <input class="govuk-input" id="occupation" name="occupation" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="employer-name">
+            Employer's name
+          </label>
+        </h3>
+        <input class="govuk-input" id="employer-name" name="employerName" type="text">
+      </div>
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            Employer's address
+          </h3>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-address-line-1">
+            Address line 1
+          </label>
+          <input class="govuk-input" id="employer-address-line-1" name="employeraddressLine1" type="text"
+            autocomplete="employer-address-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-address-line-2">
+            Address line 2 (optional)
+          </label>
+          <input class="govuk-input" id="employer-address-line-2" name="employeraddressLine2" type="text"
+            autocomplete="employer-address-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-address-town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="employer-address-town" name="employeraddressTown"
+            type="text" autocomplete="employer-address-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-address-county">
+            County (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="employer-address-county" name="employeraddressCounty"
+            type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="employer-address-postcode" name="employeraddressPostcode"
+            type="text" autocomplete="employer-postal-code">
+        </div>
+      </fieldset>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="employer-number">
+            Employer's telephone number
+          </label>
+        </h3>
+        <input class="govuk-input" id="employer-number" name="employerNumber" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="self-employed">
+            I am self employed as
+          </label>
+        </h3>
+        <input class="govuk-input" id="self-employed" name="selfEmployed" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="takehomepay">
+            Your take home pay
+          </label>
+        </h3>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="take-home-pay" name="takehomepay" type="text"
+            spellcheck="false">
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="other-income">
+            Any other income
+          </label>
+        </h3>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="other-income" name="otherIncome" type="text"
+            spellcheck="false">
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="total-income">
+            Total income
+          </label>
+        </h3>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="total-income" name="totalIncome" type="text"
+            spellcheck="false">
+        </div>
+      </div>
+
+
+
+      <h2 class="govuk-heading-m">
+        If you are NOT employed
+      </h2>
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="not-employed">
+            please state since when
+          </label>
+        </h3>
+        <input class="govuk-input govuk-input--width-10" id="not-employed" name="notEmployed" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="benefits--hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Are you in receipt of benefits?
+            </h2>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="benefits-yes" name="benefits" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="benefits-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="benefits-No" name="benefits" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="benefits-No">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="which-benefits">
+            If Yes, please state below which beneft(s) you receive.
+          </label>
+        </h3>
+        <textarea class="govuk-textarea" id="which-benefits" name="whichBenefits" rows="5"
+          aria-describedby="which-benefits-hint"></textarea>
+      </div>
+
+      {{ govukButton({
+      text: "Save and continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
