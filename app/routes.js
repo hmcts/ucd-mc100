@@ -28,6 +28,20 @@ router.post('/income-source', function (request, response) {
 })
 
 
+router.post('/spending-questions', function (request, response) {
+
+  var action = request.session.data['spendingAction']
+
+  if (action === 'continue') {
+    response.redirect('/spending-sources')
+  } else if (action === 'skip') {
+    response.redirect('/anything-else')
+  } else {
+    response.redirect('/your-page-name') // fallback
+  }
+
+})
+
 
 
 // ====================== EXPORT ======================

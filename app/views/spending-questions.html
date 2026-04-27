@@ -16,31 +16,35 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">
-      Questions about your spending
-    </h1>
+    <form action="/spending-questions" method="post">
 
-    <p>
-      The next set of questions relate to how much you spend.
-    </p>
+      <h1 class="govuk-heading-l">
+        Questions about your spending
+      </h1>
 
-    <p>
-      Any figures you give can be estimates, but should be as accurate as possible.
-      The court will use this information to decide how long you will get to pay the fine </p>
+      <p>
+        The next set of questions relate to how much you spend.
+      </p>
+
+      <p>
+        Any figures you give can be estimates, but should be as accurate as possible.
+        The court will use this information to decide how long you will get to pay the fine </p>
 
 
 
-    <div class="govuk-inset-text">
-      If you intend to pay the fine in full straight away you can skip this section.
-    </div>
+      <div class="govuk-inset-text">
+        If you intend to pay the fine in full straight away you can skip this section.
+      </div>
 
-    <form class="form" action="/spending-sources" method="enter">
+
 
       <div class="govuk-button-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
+        <button type="submit" name="spendingAction" value="continue" class="govuk-button" data-module="govuk-button">
           Continue to spending questions
         </button>
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+
+        <button type="submit" name="spendingAction" value="skip" class="govuk-button govuk-button--secondary"
+          data-module="govuk-button">
           Skip spending questions
         </button>
       </div>

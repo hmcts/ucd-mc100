@@ -19,59 +19,148 @@ href: "javascript:window.history.back()"
       Check your answers before sending your application
     </h1>
 
+    <h2 class="govuk-heading-m">
+      Personal details
+    </h2>
+
     {{ govukSummaryList({
     rows: [
     {
-    key: {
-    text: "Question 1"
-    },
-    value: {
-    text: "Answer 1"
-    },
+    key: { text: "Full name" },
+    value: { text: data['fullName'] },
     actions: {
-    items: [
+    items: [{ href: "/full-name", text: "Change", visuallyHiddenText: "full name" }]
+    }
+    },
     {
-    href: "#",
-    text: "Change",
-    visuallyHiddenText: "Question 1"
+    key: { text: "Date of birth" },
+    value: { text: data['dobDay'] + " " + data['dobMonth'] + " " + data['dobYear'] },
+    actions: {
+    items: [{ href: "/date-of-birth", text: "Change", visuallyHiddenText: "question 2" }]
+    }
+    },
+    {
+    key: { text: "National Insurance number" },
+    value: { text: data['haveNINumber'] },
+    actions: {
+    items: [{ href: "/have-ni-number", text: "Change", visuallyHiddenText: "question 3" }]
+    }
+    },
+    {
+    key: { text: "National Insurance number" },
+    value: { text: data['enterNINumber'] },
+    actions: {
+    items: [{ href: "/enter-ni-number", text: "Change", visuallyHiddenText: "question 4" }]
+    }
+    },
+    {
+    key: { text: "Phone number" },
+    value: { text: data['phoneNumber'] },
+    actions: {
+    items: [{ href: "contact-details", text: "Change", visuallyHiddenText: "question 5" }]
+    }
+    },
+    {
+    key: { text: "Email" },
+    value: { text: data['emailAddress'] },
+    actions: {
+    items: [{ href: "contact-details", text: "Change", visuallyHiddenText: "question 6" }]
+    }
+    },
+    {
+    key: { text: "Address" },
+    value: { text: data['addressLine1'] + " " +
+    data['addressLine2'] + " " +
+    data['addressTown'] + " " +
+    data['addressCounty'] + " " +
+    data['addressPostcode'] },
+    actions: {
+    items: [{ href: "/address", text: "Change", visuallyHiddenText: "question 7" }]
+    }
+    },
+    {
+    key: { text: "Case reference number" },
+    value: { text: data['referenceNumber'] },
+    actions: {
+    items: [{ href: "/case-reference-number", text: "Change", visuallyHiddenText: "question 8" }]
+    }
     }
     ]
-    }
-    }
-    ,
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Income details
+    </h2>
+
+    {{ govukSummaryList({
+    rows: [
     {
-    key: {
-    text: "Question 2"
-    },
+    key: { text: "Income sources" },
     value: {
-    text: "Answer 2"
+    text: (data['income-source'] or []) | join(", ")
     },
     actions: {
-    items: [
-    {
-    href: "#",
-    text: "Change",
-    visuallyHiddenText: "Question 2"
+    items: [{ href: "income-sources", text: "Change", visuallyHiddenText: "question 9" }]
     }
-    ]
-    }
-    }
-    ,
-    {
-    key: {
-    text: "Question 3"
     },
-    value: {
-    text: "Answer 3"
-    },
+    {
+    key: { text: "Total monthly income" },
+    value: { text: data['q10'] },
     actions: {
-    items: [
+    items: [{ href: "income-sources", text: "Change", visuallyHiddenText: "question 10" }]
+    }
+    },
     {
-    href: "#",
-    text: "Change",
-    visuallyHiddenText: "Question 3"
+    key: { text: "Company name" },
+    value: { text: data['q11'] },
+    actions: {
+    items: [{ href: "employer-details", text: "Change", visuallyHiddenText: "question 11" }]
+    }
+    },
+    {
+    key: { text: "Company contact details" },
+    value: { text: data['q12'] },
+    actions: {
+    items: [{ href: "employer-details", text: "Change", visuallyHiddenText: "question 12" }]
+    }
     }
     ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Spending details
+    </h2>
+
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "Spending sources" },
+    value: { text: data['q13'] },
+    actions: {
+    items: [{ href: "spending-sources", text: "Change", visuallyHiddenText: "question 13" }]
+    }
+    },
+    {
+    key: { text: "Spending total" },
+    value: { text: data['q14'] },
+    actions: {
+    items: [{ href: "spending-sources", text: "Change", visuallyHiddenText: "question 14" }]
+    }
+    }
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Other details
+    </h2>
+
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "Anything else" },
+    value: { text: data['q15'] },
+    actions: {
+    items: [{ href: "anything-else", text: "Change", visuallyHiddenText: "question 15" }]
     }
     }
     ]
