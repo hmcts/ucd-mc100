@@ -16,42 +16,49 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            Do you have a National Insurance number?
-          </h1>
-        </legend>
-        <div class="govuk-radios" data-module="govuk-radios">
+    <form action="/haveNINumber" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you have a National Insurance number?
+            </h1>
+          </legend>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="haveNINumber-yes" name="haveNINumber" type="radio" value="Yes">
-            <label class="govuk-label govuk-radios__label" for="haveNINumber">
+            <label class="govuk-label govuk-radios__label" for="haveNINumber-yes">
               Yes
             </label>
           </div>
+
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="haveNINumber-no" name="haveNINumber" type="radio" value="No">
-            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            <label class="govuk-label govuk-radios__label" for="haveNINumber-no">
               No
             </label>
           </div>
 
 
-        </div>
-      </fieldset>
-    </div>
-    <form class="form" action="/enter-ni-number" method="post">
 
-
+      </div>
 
       {{ govukButton({
       text: "Continue"
       }) }}
 
-    </form>
 
+      </fieldset>
   </div>
+
+
+
+
+
+
+  </form>
+
+</div>
 </div>
 
 {% endblock %}
