@@ -11,14 +11,14 @@
 }
 
 .govuk-header {
-    background-color: #0b0c0c !important;
+    background-color: var(--govuk-brand-colour) !important;
     color: #ffffff !important;
 }
 
 .govuk-header__container,
 .govuk-header__content,
 .govuk-header__logo {
-    background-color: #0b0c0c !important;
+    background-color: var(--govuk-brand-colour);
 }
 
 .govuk-header__link {
