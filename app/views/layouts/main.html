@@ -1,18 +1,11 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
-
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {% block header %}
-{{ govukHeader ({
-homepageUrl: "/index",
-serviceName: "Statement of assets and other financial circumstances",
-serviceUrl: "/index"
-}) }}
+{{ govukHeader() }}
+{{ govukServiceNavigation({ serviceName: serviceName }) }}
 {% endblock %}
+
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">

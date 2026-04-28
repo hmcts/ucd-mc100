@@ -14,12 +14,15 @@ router.post('/haveNINumber', function (request, response) {
   }
 })
 
-router.post('/income-source', function (request, response) {
+router.post('/income-sources', function (request, response) {
 
-  var incomeSource = request.session.data['income-source']
+  var incomeSources = request.session.data['income-source'] // FIX
 
-  // If "employment" is one of the selected options
-  if (incomeSource && incomeSource.includes('employment')) {
+  if (!Array.isArray(incomeSources)) {
+    incomeSources = [incomeSources]
+  }
+
+  if (incomeSources && incomeSources.includes('Employment')) {
     response.redirect('/employer-details')
   } else {
     response.redirect('/spending-questions')
@@ -36,8 +39,6 @@ router.post('/spending-questions', function (request, response) {
     response.redirect('/spending-sources')
   } else if (action === 'skip') {
     response.redirect('/anything-else')
-  } else {
-    response.redirect('/your-page-name') // fallback
   }
 
 })

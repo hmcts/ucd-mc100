@@ -16,21 +16,23 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-      <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--l" for="more-detail">
-          Is there anything else you'd like to tell us?
-        </label>
-      </h1>
-      <div id="more-detail-hint" class="govuk-hint">
-        Let us know about anything you think could be helpful, such as upcoming changes in your circumstances.
-        (optional)
-      </div>
-      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"
-        aria-describedby="more-detail-hint"></textarea>
-    </div>
-
     <form class="form" action="/check-answers" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="more-detail">
+            Is there anything else you'd like to tell us?
+          </label>
+        </h1>
+        <div id="more-detail-hint" class="govuk-hint">
+          Let us know about anything you think could be helpful, such as upcoming changes in your circumstances.
+          (optional)
+        </div>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"
+          aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+
 
 
       {{ govukButton({

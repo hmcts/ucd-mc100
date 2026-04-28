@@ -1,8 +1,8 @@
 {
-  "serviceName": "Statement of assets and other financial circumstances",
+  "serviceName": "Tell the court about your financial circumstances",
   "plugins": {
     "govuk-frontend": {
-      "rebrand": false
+      "rebrand": true
     }
   }
 }

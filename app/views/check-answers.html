@@ -105,21 +105,21 @@ href: "javascript:window.history.back()"
     },
     {
     key: { text: "Total monthly income" },
-    value: { text: data['q10'] },
+    value: { text: "£" + data['cost'] },
     actions: {
     items: [{ href: "income-sources", text: "Change", visuallyHiddenText: "question 10" }]
     }
     },
     {
     key: { text: "Company name" },
-    value: { text: data['q11'] },
+    value: { text: data['employerName'] },
     actions: {
     items: [{ href: "employer-details", text: "Change", visuallyHiddenText: "question 11" }]
     }
     },
     {
     key: { text: "Company contact details" },
-    value: { text: data['q12'] },
+    value: { text: data['employerEmail'] },
     actions: {
     items: [{ href: "employer-details", text: "Change", visuallyHiddenText: "question 12" }]
     }
@@ -135,14 +135,16 @@ href: "javascript:window.history.back()"
     rows: [
     {
     key: { text: "Spending sources" },
-    value: { text: data['q13'] },
+    value: {
+    text: (data['spending-source'] or []) | join(", ")
+    },
     actions: {
     items: [{ href: "spending-sources", text: "Change", visuallyHiddenText: "question 13" }]
     }
     },
     {
     key: { text: "Spending total" },
-    value: { text: data['q14'] },
+    value: { text: "£" + data['spend'] },
     actions: {
     items: [{ href: "spending-sources", text: "Change", visuallyHiddenText: "question 14" }]
     }
@@ -158,7 +160,7 @@ href: "javascript:window.history.back()"
     rows: [
     {
     key: { text: "Anything else" },
-    value: { text: data['q15'] },
+    value: { text: data['moreDetail'] },
     actions: {
     items: [{ href: "anything-else", text: "Change", visuallyHiddenText: "question 15" }]
     }
