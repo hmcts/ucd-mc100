@@ -26,16 +26,47 @@ href: "javascript:window.history.back()"
         <input class="govuk-input govuk-input--width-10" id="employer-name" name="employerName" type="text"
           aria-describedby="employer-name-hint">
       </div>
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="employer-email">
-          What are the contact details of the company you work for?
-        </label>
-        <div id="employer-email-hint" class="govuk-hint">
-          Enter a phone number or email address
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            What is the address of your employer?
+          </h2>
+        </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-line-1">
+            Address line 1
+          </label>
+          <input class="govuk-input" id="employer-line-1" name="employerLine1" type="text"
+            autocomplete="employer-line1">
         </div>
-        <input class="govuk-input govuk-input--width-10" id="employer-email" name="employerEmail" type="text"
-          aria-describedby="employer-email-hint">
-      </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-line-2">
+            Address line 2 (optional)
+          </label>
+          <input class="govuk-input" id="employer-line-2" name="employerLine2" type="text"
+            autocomplete="employer-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="employer-town" name="employerTown" type="text"
+            autocomplete="employer-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-county">
+            County (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="employer-county" name="employerCounty" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="employer-postcode" name="employerPostcode" type="text"
+            autocomplete="postal-code">
+        </div>
+      </fieldset>
 
 
 

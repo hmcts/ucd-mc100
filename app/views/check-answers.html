@@ -118,10 +118,14 @@ href: "javascript:window.history.back()"
     }
     },
     {
-    key: { text: "Company contact details" },
-    value: { text: data['employerEmail'] },
+    key: { text: "Employer address" },
+    value: { text: data['employerLine1'] + " " +
+    data['employerLine2'] + " " +
+    data['employerTown'] + " " +
+    data['employerCounty'] + " " +
+    data['employerPostcode'] },
     actions: {
-    items: [{ href: "employer-details", text: "Change", visuallyHiddenText: "question 12" }]
+    items: [{ href: "/employer-details", text: "Change", visuallyHiddenText: "question 7" }]
     }
     }
     ]
@@ -169,18 +173,18 @@ href: "javascript:window.history.back()"
     }) }}
 
     <h2 class="govuk-heading-m">
-      Now send your application
+      Declaration
     </h2>
 
     <p>
-      By submitting this application you are confirming that, to the best of your knowledge, the details you are
-      providing are correct.
+      I understand that if I have knowingly made a statement which is false or knowingly failed to disclose any relevant
+      facts, it is an offence for which I can receive a further fine.
     </p>
 
     <form action="/confirmation" method="post" novalidate>
 
       {{ govukButton({
-      text: "Accept and send"
+      text: "Agree and submit"
       }) }}
 
     </form>
