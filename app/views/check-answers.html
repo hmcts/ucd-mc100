@@ -89,45 +89,65 @@ href: "javascript:window.history.back()"
     }) }}
 
     <h2 class="govuk-heading-m">
-      Income details
+      Income and employment details
     </h2>
-
     {{ govukSummaryList({
     rows: [
+
     {
-    key: { text: "Income sources" },
-    value: {
-    text: (data['income-source'] or []) | join(", ")
-    },
+    key: { text: "Receiving benefits" },
+    value: { text: data['receiveBenefits'] },
     actions: {
-    items: [{ href: "income-sources", text: "Change", visuallyHiddenText: "question 9" }]
+    items: [{ href: "any-benefits", text: "Change", visuallyHiddenText: "receiving benefits" }]
     }
     },
+
     {
-    key: { text: "Total monthly income" },
-    value: { text: "£" + data['cost'] },
+    key: { text: "Which benefits" },
+    value: { text: (data['whichBenefits'] or []) | join(", ") },
     actions: {
-    items: [{ href: "income-sources", text: "Change", visuallyHiddenText: "question 10" }]
+    items: [{ href: "benefits", text: "Change", visuallyHiddenText: "which benefits" }]
     }
     },
+
+    {
+    key: { text: "Are you employed" },
+    value: { text: data['employmentStatus'] },
+    actions: {
+    items: [{ href: "employment-status", text: "Change", visuallyHiddenText: "employment status" }]
+    }
+    },
+
     {
     key: { text: "Company name" },
     value: { text: data['employerName'] },
     actions: {
-    items: [{ href: "employer-details", text: "Change", visuallyHiddenText: "question 11" }]
+    items: [{ href: "employer-details", text: "Change", visuallyHiddenText: "company name" }]
     }
     },
+
     {
     key: { text: "Employer address" },
-    value: { text: data['employerLine1'] + " " +
+    value: {
+    text: data['employerLine1'] + " " +
     data['employerLine2'] + " " +
     data['employerTown'] + " " +
     data['employerCounty'] + " " +
-    data['employerPostcode'] },
+    data['employerPostcode']
+    },
     actions: {
-    items: [{ href: "/employer-details", text: "Change", visuallyHiddenText: "question 7" }]
+    items: [{ href: "/employer-details", text: "Change", visuallyHiddenText: "employer address" }]
+    }
+    },
+
+    {
+    key: { text: "Total monthly income" },
+    value: { text: data['cost'] },
+    actions: {
+    items: [{ href: "income-sources", text: "Change", visuallyHiddenText: "total monthly income" }]
     }
     }
+
     ]
     }) }}
 
