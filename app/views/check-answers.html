@@ -91,6 +91,7 @@ href: "javascript:window.history.back()"
     <h2 class="govuk-heading-m">
       Income and employment details
     </h2>
+
     {{ govukSummaryList({
     rows: [
 
@@ -104,7 +105,7 @@ href: "javascript:window.history.back()"
 
     {
     key: { text: "Which benefits" },
-    value: { text: (data['whichBenefits'] or []) | join(", ") },
+    value: { text: data['receiveBenefits'] or '' },
     actions: {
     items: [{ href: "benefits", text: "Change", visuallyHiddenText: "which benefits" }]
     }
