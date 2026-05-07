@@ -35,17 +35,7 @@ router.post('/income-sources', function (request, response) {
 })
 
 
-router.post('/spending-questions', function (request, response) {
 
-  var action = request.session.data['spendingAction']
-
-  if (action === 'continue') {
-    response.redirect('/spending-sources')
-  } else if (action === 'skip') {
-    response.redirect('/anything-else')
-  }
-
-})
 
 router.post('/any-benefits', function (request, response) {
 
@@ -58,6 +48,19 @@ router.post('/any-benefits', function (request, response) {
   }
 
 })
+
+router.post('/spending-questions', function (request, response) {
+
+  const spendingDetails = request.session.data['spendingDetails']
+
+  if (spendingDetails === 'yes') {
+    response.redirect('/spending-sources')
+  } else {
+    response.redirect('/anything-else')
+  }
+
+})
+
 
 router.post('/employment-status', function (request, response) {
 

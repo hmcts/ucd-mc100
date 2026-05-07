@@ -32,22 +32,37 @@ href: "javascript:window.history.back()"
 
 
 
-      <div class="govuk-inset-text">
-        If you intend to pay the fine in full straight away you can skip this section.
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="spendingDetails-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Do you want to give details of your spending now?
+            </h2>
+          </legend>
+          <div id="spendingDetails-hint" class="govuk-hint">
+            The court will use this information to decide how long you will get to pay a fine. If you cannot pay the
+            fine in full, you can ask for more time to pay.
+          </div>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="spendingDetails" name="spendingDetails" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="spendingDetails">
+                Yes - give spending details now
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="spendingDetails-2" name="spendingDetails" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="spendingDetails-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
       </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
 
-
-
-      <div class="govuk-button-group">
-        <button type="submit" name="spendingAction" value="continue" class="govuk-button" data-module="govuk-button">
-          Continue to spending questions
-        </button>
-
-        <button type="submit" name="spendingAction" value="skip" class="govuk-button govuk-button--secondary"
-          data-module="govuk-button">
-          Skip spending questions
-        </button>
-      </div>
 
     </form>
 
