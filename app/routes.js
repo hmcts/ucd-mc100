@@ -74,6 +74,19 @@ router.post('/employment-status', function (request, response) {
 
 })
 
+router.post('/have-case-number', function (request, response) {
+
+  const haveReference = request.session.data['haveReference']
+
+  if (haveReference === 'yes') {
+    response.redirect('/case-reference-number')
+  } else {
+    response.redirect('/how-to-continue')
+  }
+
+})
+
+
 
 // ====================== EXPORT ======================
 module.exports = router;
