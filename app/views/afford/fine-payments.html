@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Monthly fine payments
+    </h1>
+
+    <p>
+      The court may decide to fine you. If you cannot afford to pay the total amount on the day, a payment plan can be
+      set up.
+
+    </p>
+
+    <p>
+      You would have to pay a set amount each month, usually over 12 months.
+
+    </p>
+
+    <form class="form" action="/afford/anything-else" method="post">
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              How much could you afford to pay each month?
+              </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="paymentAmount" name="paymentAmount" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="paymentAmount">
+                £20 or less a month
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="paymentAmount-2" name="paymentAmount" type="radio"
+                value="scotland">
+              <label class="govuk-label govuk-radios__label" for="paymentAmount-2">
+                between £21 and £50 a month
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="paymentAmount-3" name="paymentAmount" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label" for="paymentAmount-3">
+                between £51 and £100 a month
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="paymentAmount-4" name="paymentAmount" type="radio"
+                value="northern-ireland">
+              <label class="govuk-label govuk-radios__label" for="paymentAmount-4">
+                between £100 and £500 a month
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="paymentAmount-4" name="paymentAmount" type="radio"
+                value="northern-ireland">
+              <label class="govuk-label govuk-radios__label" for="paymentAmount-4">
+                over £500 a month
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="paymentAmount-4" name="paymentAmount" type="radio"
+                value="northern-ireland">
+              <label class="govuk-label govuk-radios__label" for="paymentAmount-4">
+                I can pay the fine in full
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

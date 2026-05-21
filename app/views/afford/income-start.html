@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Questions about your income and employment
+    </h1>
+
+    <p>
+      The next set of questions are about your income, employment and benefits.
+    </p>
+
+    <p>
+      Any figures you give can be estimates, but should be as accurate as possible.
+    </p>
+
+    <p>If you are fined, these figures will be used to set the fine amount.
+
+    </p>
+    <form class="form" action="/afford/any-benefits" method="enter">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

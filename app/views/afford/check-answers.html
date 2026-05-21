@@ -1,0 +1,215 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers before sending your application
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Personal details
+    </h2>
+
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "Full name" },
+    value: { text: data['fullName'] },
+    actions: {
+    items: [{ href: "/full-name", text: "Change", visuallyHiddenText: "full name" }]
+    }
+    },
+    {
+    key: { text: "Date of birth" },
+    value: { text: data['dobDay'] + " " + data['dobMonth'] + " " + data['dobYear'] },
+    actions: {
+    items: [{ href: "/date-of-birth", text: "Change", visuallyHiddenText: "question 2" }]
+    }
+    },
+    {
+    key: { text: "National Insurance number" },
+    value: { text: data['haveNINumber'] },
+    actions: {
+    items: [{ href: "/have-ni-number", text: "Change", visuallyHiddenText: "question 3" }]
+    }
+    },
+    {
+    key: { text: "National Insurance number" },
+    value: { text: data['enterNINumber'] },
+    actions: {
+    items: [{ href: "/enter-ni-number", text: "Change", visuallyHiddenText: "question 4" }]
+    }
+    },
+    {
+    key: { text: "Phone number" },
+    value: { text: data['phoneNumber'] },
+    actions: {
+    items: [{ href: "contact-details", text: "Change", visuallyHiddenText: "question 5" }]
+    }
+    },
+    {
+    key: { text: "Email" },
+    value: { text: data['emailAddress'] },
+    actions: {
+    items: [{ href: "contact-details", text: "Change", visuallyHiddenText: "question 6" }]
+    }
+    },
+    {
+    key: { text: "Address" },
+    value: { text: data['addressLine1'] + " " +
+    data['addressLine2'] + " " +
+    data['addressTown'] + " " +
+    data['addressCounty'] + " " +
+    data['addressPostcode'] },
+    actions: {
+    items: [{ href: "/address", text: "Change", visuallyHiddenText: "question 7" }]
+    }
+    },
+    {
+    key: { text: "Case reference number" },
+    value: { text: data['referenceNumber'] },
+    actions: {
+    items: [{ href: "/case-reference-number", text: "Change", visuallyHiddenText: "question 8" }]
+    }
+    }
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Income and employment details
+    </h2>
+
+    {{ govukSummaryList({
+    rows: [
+
+    {
+    key: { text: "Receiving benefits" },
+    value: { text: data['receiveBenefits'] },
+    actions: {
+    items: [{ href: "any-benefits", text: "Change", visuallyHiddenText: "receiving benefits" }]
+    }
+    },
+
+    {
+    key: { text: "Which benefits" },
+    value: { text: data['whichBenefits'] or '' },
+    actions: {
+    items: [{ href: "benefits", text: "Change", visuallyHiddenText: "which benefits" }]
+    }
+    },
+
+    {
+    key: { text: "Are you employed" },
+    value: { text: data['employmentStatus'] },
+    actions: {
+    items: [{ href: "employment-status", text: "Change", visuallyHiddenText: "employment status" }]
+    }
+    },
+
+    {
+    key: { text: "Company name" },
+    value: { text: data['employerName'] },
+    actions: {
+    items: [{ href: "employer-details", text: "Change", visuallyHiddenText: "company name" }]
+    }
+    },
+
+    {
+    key: { text: "Employer address" },
+    value: {
+    text: data['employerLine1'] + " " +
+    data['employerLine2'] + " " +
+    data['employerTown'] + " " +
+    data['employerCounty'] + " " +
+    data['employerPostcode']
+    },
+    actions: {
+    items: [{ href: "/employer-details", text: "Change", visuallyHiddenText: "employer address" }]
+    }
+    },
+
+    {
+    key: { text: "Total monthly income" },
+    value: { text: data['cost'] },
+    actions: {
+    items: [{ href: "income-sources", text: "Change", visuallyHiddenText: "total monthly income" }]
+    }
+    }
+
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Spending details
+    </h2>
+
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "Spending sources" },
+    value: {
+    text: (data['spending-source'] or []) | join(", ")
+    },
+    actions: {
+    items: [{ href: "spending-sources", text: "Change", visuallyHiddenText: "question 13" }]
+    }
+    },
+    {
+    key: { text: "Spending total" },
+    value: { text: "£" + data['spend'] },
+    actions: {
+    items: [{ href: "spending-sources", text: "Change", visuallyHiddenText: "question 14" }]
+    }
+    }
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Other details
+    </h2>
+
+    {{ govukSummaryList({
+    rows: [
+    {
+    key: { text: "Anything else" },
+    value: { text: data['moreDetail'] },
+    actions: {
+    items: [{ href: "anything-else", text: "Change", visuallyHiddenText: "question 15" }]
+    }
+    }
+    ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Declaration
+    </h2>
+
+    <p>
+      I understand that if I have knowingly made a statement which is false or knowingly failed to disclose any relevant
+      facts, it is an offence for which I can receive a further fine.
+    </p>
+
+    <form action="/confirmation" method="post" novalidate>
+
+      {{ govukButton({
+      text: "Agree and submit"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

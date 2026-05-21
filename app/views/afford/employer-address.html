@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      What is the address of your employer?
+    </h1>
+
+    <form class="form" action="/afford/income-sources" method="get">
+
+      <fieldset class="govuk-fieldset">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-line-1">
+            Address line 1
+          </label>
+          <input class="govuk-input" id="employer-line-1" name="employerLine1" type="text"
+            autocomplete="employer-line1">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-line-2">
+            Address line 2 (optional)
+          </label>
+          <input class="govuk-input" id="employer-line-2" name="employerLine2" type="text"
+            autocomplete="employer-line2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="employer-town" name="employerTown" type="text"
+            autocomplete="employer-level2">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-county">
+            County (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="employer-county" name="employerCounty" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="employer-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="employer-postcode" name="employerPostcode" type="text"
+            autocomplete="postal-code">
+        </div>
+      </fieldset>
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

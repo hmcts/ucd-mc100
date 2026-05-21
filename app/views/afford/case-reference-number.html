@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/afford/income-start" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="reference-number">
+            What is your case reference number?
+          </label>
+        </h1>
+        <div id="reference-number-hint" class="govuk-hint">
+          You can find your case reference number or URN on any correspondence from the court or your hearing notice, it
+          should have 10 or 11 characters.
+        </div>
+        <input class="govuk-input" id="reference-number" name="referenceNumber" type="text"
+          aria-describedby="reference-number-hint">
+      </div>
+
+
+
+
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

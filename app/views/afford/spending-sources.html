@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">
+      Your essential monthly spending
+    </h1>
+
+    <form class="form" action="/afford/anything-else" method="post">
+
+      <p>Give an estimate of your monthly essential spending. This information will be used to help work out a payment
+        plan for any fine you may receive.
+      </p>
+
+      <p class="govuk-body">You should include your spending on things such as:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>food</li>
+        <li>travel, including train and car</li>
+        <li>household bills, including council tax, phone and energy</li>
+        <li>childcare</li>
+        <li>rent or mortgage</li>
+      </ul>
+
+      <p>Do not include items such as subscriptions to the gym or streaming services.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="spending-source-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              What is your total monthly spending across all categories?
+            </h1>
+          </legend>
+          <div id="waste-hint" class="govuk-hint">
+            Enter your estimated total monthly spending.
+
+
+          </div>
+
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="spend" name="spend" type="text" spellcheck="false">
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+        </fieldset>
+
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+
+
+      </div>
+
+    </form>
+
+
+
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
