@@ -23,95 +23,55 @@ href: "javascript:window.history.back()"
 
     <form class="form" action="/anything-else" method="post">
 
+      <p>Give an estimate of your monthly essential spending. This information will be used to help work out a payment
+        plan for any fine you may receive.
+      </p>
+
+      <p class="govuk-body">You should include your spending on things such as:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>food</li>
+        <li>travel, including train and car</li>
+        <li>household bills, including council tax, phone and energy</li>
+        <li>childcare</li>
+        <li>rent or mortgage</li>
+      </ul>
+
+      <p>Do not include items such as subscriptions to the gym or streaming services.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="spending-source-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h2 class="govuk-fieldset__heading">
-              What are the essential areas you spend money on regularly?
-            </h2>
+            <h1 class="govuk-fieldset__heading">
+              What is your total monthly spending across all categories?
+            </h1>
           </legend>
-          <div id="income-source-hint" class="govuk-hint">
-            Select all that apply
+          <div id="waste-hint" class="govuk-hint">
+            Enter your estimated total monthly spending.
+
+
           </div>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="spending-source-1" name="spending-source" type="checkbox"
-                value="Rent or mortgage">
-              <label class="govuk-label govuk-checkboxes__label" for="spending-source-1">
-                Rent or mortgage
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="spending-source-2" name="spending-source" type="checkbox"
-                value="Travel">
-              <label class="govuk-label govuk-checkboxes__label" for="spending-source-2">
-                Travel - including train and car costs
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="spending-source-3" name="spending-source" type="checkbox"
-                value="Food">
-              <label class="govuk-label govuk-checkboxes__label" for="spending-source-3">
-                Food
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="spending-source-4" name="spending-source" type="checkbox"
-                value="Phone">
-              <label class="govuk-label govuk-checkboxes__label" for="spending-source-4">
-                Household bills - including council tax, phone and energy
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="spending-source-5" name="spending-source" type="checkbox"
-                value="Childcare">
-              <label class="govuk-label govuk-checkboxes__label" for="spending-source-5">
-                Childcare
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="spending-source-6" name="spending-source" type="checkbox"
-                value="Other">
-              <label class="govuk-label govuk-checkboxes__label" for="spending-source-6">
-                Other
-              </label>
 
-            </div>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="spend" name="spend" type="text" spellcheck="false">
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="spending-source-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  <h1 class="govuk-fieldset__heading">
-                    What is your total monthly spending across all categories?
-                  </h1>
-                </legend>
-                <div id="waste-hint" class="govuk-hint">
-                  Enter your estimated total monthly spending.
+        </fieldset>
 
 
-                </div>
-
-                <div class="govuk-input__wrapper">
-                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="govuk-input govuk-input--width-5" id="spend" name="spend" type="text"
-                    spellcheck="false">
-                </div>
+        {{ govukButton({
+        text: "Continue"
+        }) }}
 
 
-
-                <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-
-              </fieldset>
-            </div>
+      </div>
 
     </form>
 
 
 
-    {{ govukButton({
-    text: "Continue"
-    }) }}
 
     </form>
 

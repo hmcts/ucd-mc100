@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/deduct-earnings" method="post">
+
+      <h1 class="govuk-heading-l">
+        Deductions from earnings
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        If you need to pay a penalty, would you like us to deduct it from your earnings?
+        </h1>
+
+        <p>
+        <p class="govuk-body">The court may deduct a penalty from your earnings if:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>you've failed to pay in the past</li>
+          <li>you're ordered to pay compensation, as part of your penalty</li>
+        </ul>
+        </p>
+
+        <div class="govuk-form-group">
+
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="deductEarnings" name="deductEarnings" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="deductEarnings">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="deductEarnings-2" name="deductEarnings" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="deductEarnings-2">
+                No
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+
+
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

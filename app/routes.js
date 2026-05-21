@@ -67,7 +67,7 @@ router.post('/employment-status', function (request, response) {
   const employmentStatus = request.session.data['employmentStatus']
 
   if (employmentStatus === 'yes') {
-    response.redirect('/employer-details')
+    response.redirect('/deduct-earnings')
   } else {
     response.redirect('/income-sources')
   }
@@ -85,6 +85,19 @@ router.post('/have-case-number', function (request, response) {
   }
 
 })
+
+router.post('/deduct-earnings', function (request, response) {
+
+  const deductEarnings = request.session.data['deductEarnings']
+
+  if (deductEarnings === 'yes') {
+    response.redirect('/employer-details')
+  } else {
+    response.redirect('/income-sources')
+  }
+
+})
+
 
 
 
