@@ -1,0 +1,261 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      View your complaints files
+    </h1>
+
+
+    <div class="govuk-!-margin-bottom-6">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="search">Find by reference number</label>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <input class="govuk-input govuk-input--width-10" id="search" name="search" type="search">
+          <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Search</button>
+        </div>
+      </div>
+
+      <details class="govuk-details govuk-!-margin-bottom-6" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">Filter results</span>
+        </summary>
+        <div class="govuk-details__text">
+          <form method="get">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="pending" name="status" type="checkbox" value="pending">
+                  <label class="govuk-label govuk-checkboxes__label" for="pending">Awaiting court decision</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="failed" name="status" type="checkbox" value="failed">
+                  <label class="govuk-label govuk-checkboxes__label" for="failed">Upload failed</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="accepted" name="status" type="checkbox" value="accepted">
+                  <label class="govuk-label govuk-checkboxes__label" for="accepted">Accepted by court</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="rejected" name="status" type="checkbox" value="rejected">
+                  <label class="govuk-label govuk-checkboxes__label" for="rejected">Rejected by court</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4" role="group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Date uploaded</legend>
+              <div class="govuk-date-input govuk-!-margin-bottom-2">
+                <div class="govuk-date-input__item">
+                  <label class="govuk-label govuk-date-input__label" for="from-day">Day</label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day"
+                    type="text">
+                </div>
+                <div class="govuk-date-input__item">
+                  <label class="govuk-label govuk-date-input__label" for="from-month">Month</label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month"
+                    name="from-month" type="text">
+                </div>
+                <div class="govuk-date-input__item">
+                  <label class="govuk-label govuk-date-input__label" for="from-year">Year</label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year"
+                    name="from-year" type="text">
+                </div>
+              </div>
+              <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-2">to</p>
+              <div class="govuk-date-input">
+                <div class="govuk-date-input__item">
+                  <label class="govuk-label govuk-date-input__label" for="to-day">Day</label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day"
+                    type="text">
+                </div>
+                <div class="govuk-date-input__item">
+                  <label class="govuk-label govuk-date-input__label" for="to-month">Month</label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month"
+                    type="text">
+                </div>
+                <div class="govuk-date-input__item">
+                  <label class="govuk-label govuk-date-input__label" for="to-year">Year</label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year"
+                    type="text">
+                </div>
+              </div>
+            </fieldset>
+
+            <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">Apply filters</button>
+
+          </form>
+        </div>
+      </details>
+
+    </div>
+
+
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Reference</th>
+          <th scope="col" class="govuk-table__header">Date uploaded</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+          <th scope="col" class="govuk-table__header">File name</th>
+          <th scope="col" class="govuk-table__header">Uploaded by</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">REF-101</th>
+          <td class="govuk-table__cell">10 June 2026</td>
+          <td class="govuk-table__cell">Accepted by court</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">complaints-list-AB.pdf</td>
+          <td class="govuk-table__cell">Amelia Carter</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">REF-102</th>
+          <td class="govuk-table__cell">9 June 2026</td>
+          <td class="govuk-table__cell">Processing</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">complaints-list-TR.pdf</td>
+          <td class="govuk-table__cell">Noah Bennett</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">REF-103</th>
+          <td class="govuk-table__cell">8 June 2026</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">Upload failed</strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/bulk-uploads/error-report">
+              View error report
+              <span class="govuk-visually-hidden"> for REF-103</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">complaints-list-KM.pdf</td>
+          <td class="govuk-table__cell">Sophia Ahmed</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">REF-104</th>
+          <td class="govuk-table__cell">7 June 2026</td>
+          <td class="govuk-table__cell">Rejected by court</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">complaints-list-QW.pdf</td>
+          <td class="govuk-table__cell">Lucas Turner</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">REF-105</th>
+          <td class="govuk-table__cell">6 June 2026</td>
+          <td class="govuk-table__cell">Accepted by court</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">complaints-list-ZP.pdf</td>
+          <td class="govuk-table__cell">Isla Morgan</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">REF-106</th>
+          <td class="govuk-table__cell">5 June 2026</td>
+          <td class="govuk-table__cell">Awaiting court decision</td>
+          <td class="govuk-table__cell">
+            <a href="/documents/ref-106/add-supporting-documents">
+              Add supporting documents
+              <span class="govuk-visually-hidden"> for REF-106</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">complaints-list-HJ.pdf</td>
+          <td class="govuk-table__cell">Ethan Hughes</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">REF-107</th>
+          <td class="govuk-table__cell">4 June 2026</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">Upload failed</strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="/documents/ref-107/report">
+              View error report
+              <span class="govuk-visually-hidden"> for REF-107</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">complaints-list-LN.pdf</td>
+          <td class="govuk-table__cell">Grace Patel</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">REF-108</th>
+          <td class="govuk-table__cell">3 June 2026</td>
+          <td class="govuk-table__cell">Rejected by court</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">complaints-list-RD.pdf</td>
+          <td class="govuk-table__cell">Oliver Reid</td>
+        </tr>
+
+      </tbody>
+    </table>
+    <nav class="govuk-pagination" aria-label="Pagination">
+
+      <ul class="govuk-pagination__list">
+
+        <li class="govuk-pagination__item govuk-pagination__item--current">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+            1
+          </a>
+        </li>
+
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+            2
+          </a>
+        </li>
+
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+            3
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="govuk-pagination__next">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+
+          <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg"
+            height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path
+              d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+            </path>
+          </svg>
+        </a>
+      </div>
+
+    </nav>
+
+
+    {% endblock %}
