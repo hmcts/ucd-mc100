@@ -22,43 +22,47 @@ href: "javascript:window.history.back()"
         Deductions from earnings
       </h1>
 
+      <p>You can choose to pay a fine by having it taken from your earnings. This means the payment will come out of
+        your wages before you are paid.
+      </p>
+
+
+      <p>
+        The court will contact your employer to set up the payments.
+      </p>
+
+      <p>If you have failed to pay a fine the past, the court may order that the fine must be taken from your earnings.
+      </p>
       <h2 class="govuk-heading-m">
-        If you need to pay a penalty, would you like us to deduct it from your earnings?
-        </h1>
+        If you are fined, would you like the court to take the payment from your earnings?
+      </h2>
 
-        <p>
-        <p class="govuk-body">The court may deduct a penalty from your earnings if:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>you've failed to pay in the past</li>
-          <li>you're ordered to pay compensation, as part of your penalty</li>
-        </ul>
-        </p>
 
-        <div class="govuk-form-group">
+      <div class="govuk-form-group">
 
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="deductEarnings" name="deductEarnings" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="deductEarnings">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="deductEarnings-2" name="deductEarnings" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="deductEarnings-2">
-                No
-              </label>
-            </div>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="deductEarnings" name="deductEarnings" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="deductEarnings">
+              Yes
+            </label>
           </div>
-          </fieldset>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="deductEarnings-2" name="deductEarnings" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="deductEarnings-2">
+              No
+            </label>
+          </div>
         </div>
+        </fieldset>
+      </div>
 
 
 
 
-        {{ govukButton({
-        text: "Continue"
-        }) }}
+      {{ govukButton({
+      text: "Continue"
+      }) }}
 
     </form>
 
