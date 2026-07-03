@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Upload complaints list
+    </h1>
+
+    <p>Use the CVC template to upload your file list. Make sure the file name describes what the list is so that
+      it
+      can be easily found.</p>
+
+    <p class="govuk-body">
+      Download the <a href="#" class="govuk-link">CVC template</a>.
+    </p>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="file-upload-1">
+        Upload a file
+      </label>
+      <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+    </div>
+
+    <form class="form" action="/bulk-uploads/confirm" method="post">
+
+
+      {{ govukButton({
+      text: "Send to court"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="hmcts-context-panel" role="status" aria-live="polite">
+      <div class="hmcts-context-panel__icon" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24.5 44.5L10.5 30.5L4 37L24.5 57.5L60 22L53.5 15.5L24.5 44.5Z" fill="white" />
+        </svg>
+      </div>
+
+      <div class="hmcts-context-panel__content">
+        <h1 class="govuk-heading-l hmcts-context-panel__title">
+          Your zip file is being checked for errors
+        </h1>
+
+        <p class="govuk-body-l hmcts-context-panel__message">
+          Check back in 24 hours to find out if it's been successfully sent to court
+        </p>
+      </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p>Your file should be ready to view soon.</p>
+
+    <p class="govuk-body">
+      <a href="/bulk-uploads/complaints-home" class="govuk-link">Go back to complaints list home</a>
+    </p>
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}

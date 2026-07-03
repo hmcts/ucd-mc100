@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <strong class="govuk-tag govuk-tag--red">
+      Upload failed
+    </strong>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <h1 class="govuk-heading-l">
+      Review error report for KUJ5953G
+    </h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date uploaded
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 August 2025
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          File name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          complaints.NW
+        </dd>
+
+      </div>
+
+    </dl>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">6 errors found</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Column</th>
+          <th scope="col" class="govuk-table__header">Error</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">C</th>
+          <td class="govuk-table__cell">Date format should be DD MM YYYY</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">F</th>
+          <td class="govuk-table__cell">You must enter an offence code</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">F</th>
+          <td class="govuk-table__cell">You must enter a full name</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">G</th>
+          <td class="govuk-table__cell">Date format should be DD MM YYYY</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">K</th>
+          <td class="govuk-table__cell">Home address not recognised</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">M</th>
+          <td class="govuk-table__cell">Date format should be DD MM YYYY</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>You must fix the errors in the list and re-upload the file.</p>
+
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Upload corrected file
+      </button>
+      <a class="govuk-link" href="#">Cancel</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
