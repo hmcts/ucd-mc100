@@ -16,7 +16,7 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
     <h1 class="govuk-heading-xl">
-      Check your answers before sending your application
+      Check your answers before submitting your form
     </h1>
 
     <h2 class="govuk-heading-m">
@@ -192,6 +192,46 @@ href: "javascript:window.history.back()"
     }
     ]
     }) }}
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Do you want to get an email confirming your form has been submitted?
+          </h2>
+        </legend>
+        <div id="contact-hint" class="govuk-hint">
+          We'll only use the email address you provide here to send a confirmation that your form's been successfully
+          submitted. It will not contain a copy of your answers.
+        </div>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email"
+              data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+                What email address do you want us to send your confirmation to?
+              </label>
+              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail"
+                type="email" spellcheck="false" autocomplete="email">
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+            <label class="govuk-label govuk-radios__label" for="contact-2">
+              No
+            </label>
+          </div>
+
+        </div>
+
+      </fieldset>
+    </div>
 
     <h2 class="govuk-heading-m">
       Declaration

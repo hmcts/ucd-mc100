@@ -9,11 +9,15 @@ Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukPanel({
-    titleText: "Submitted",
-    html: ""
-    }) }}
-
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Your form has been submitted
+      </h1>
+      <div class="govuk-panel__body">
+        Your form reference number is<br>
+        <strong>HDJ2123F</strong>
+      </div>
+    </div>
 
 
     <h2 class="govuk-heading-m">
@@ -21,7 +25,7 @@ Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
     </h2>
 
     <p>
-      You will be sent an email confirmation that you have submitted your information.
+      If you chose to receive an email confirmation, this will be sent to the email you provided.
     </p>
 
     <p>
@@ -29,18 +33,13 @@ Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
       plan.
     </p>
 
-    <h2 class="govuk-heading-m">
-      If your circumstances change
-    </h2>
 
     <p>
       If your circumstances change, for example, if there is a change in your employment, you should contact the
-      enforcement team dealing with your case.
+      enforcement team dealing with your case. Their contact details should be included in the correspondence from them.
+      You may be asked to complete this form again.
     </p>
 
-    <p>You may be asked to complete this form again.</p>
-
-    <p>Contact details for the enforcement team should be included in correspondence from the team.</p>
 
   </div>
 </div>

@@ -16,39 +16,55 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <h1 class="govuk-heading-l">
+      Questions about your income and employment
+    </h1>
+
+    <p>
+      You will now be asked about your income, employment and benefits.
+    </p>
+
+    <p>
+      Any figures you give can be estimates, but should be as accurate as possible. The court may ask for evidence later
+      on.
+    </p>
+
+    <p>If you are fined, these figures will be used to set the fine amount.
+
+    </p>
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="receiveBenefits-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+          <h2 class="govuk-fieldset__heading">
+            Do you recieve any benefits?
+          </h2>
 
 
 
-
-
-          <h1 class="govuk-fieldset__heading">
-            Are you receiving any benefits?
-          </h1>
-
-          <form class="form" action="/afford/any-benefits" method="post">
 
         </legend>
-        <div id="receiveBenefits-hint" class="govuk-hint">
-          Such as Job Seekers Allowance, Universal Credit or Employment and Support Allowance. Do not include any
-          benefits that are not in your name, for example benefits paid to you for your child.
-        </div>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="receiveBenefits" name="receiveBenefits" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="receiveBenefits">
-              Yes
-            </label>
+
+        <form class="form" action="/afford/any-benefits" method="post">
+          <div id="receiveBenefits-hint" class="govuk-hint">
+            Such as Job Seekers Allowance, Universal Credit or Employment and Support Allowance. Do not include any
+            benefits that are not in your name, for example benefits paid to you for your child.
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="receiveBenefits-2" name="receiveBenefits" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="receiveBenefits-2">
-              No
-            </label>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="receiveBenefits" name="receiveBenefits" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="receiveBenefits">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="receiveBenefits-2" name="receiveBenefits" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="receiveBenefits-2">
+                No
+              </label>
+            </div>
           </div>
-        </div>
       </fieldset>
     </div>
 
