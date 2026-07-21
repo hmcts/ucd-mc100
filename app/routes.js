@@ -199,7 +199,19 @@ router.post('/afford/deduct-earnings', function (request, response) {
 })
 
 
+// Email copy question
+router.post('/afford/email-copy', function (req, res) {
+  const contact = req.body.contact;
 
+  if (contact === 'email') {
+    res.redirect('/afford/check-answers');
+  } else if (contact === 'phone') {
+    res.redirect('/afford/check-answers-2');
+  } else {
+    // If nothing is selected, send the user back
+    res.redirect('/afford/email-copy');
+  }
+});
 
 
 

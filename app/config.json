@@ -1,5 +1,5 @@
 {
-  "serviceName": "Common Platform",
+  "serviceName": "Tell the court about your financial circumstances",
   "plugins": {
     "govuk-frontend": {
       "rebrand": true
