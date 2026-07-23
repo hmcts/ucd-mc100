@@ -153,22 +153,14 @@ href: "javascript:window.history.back()"
     }) }}
 
     <h2 class="govuk-heading-m">
-      Spending details
+      Payment plan affordability
     </h2>
 
     {{ govukSummaryList({
     rows: [
+
     {
-    key: { text: "Spending sources" },
-    value: {
-    text: (data['spending-source'] or []) | join(", ")
-    },
-    actions: {
-    items: [{ href: "spending-sources", text: "Change", visuallyHiddenText: "question 13" }]
-    }
-    },
-    {
-    key: { text: "Spending total" },
+    key: { text: "Payment plan affordability" },
     value: { text: "£" + data['spend'] },
     actions: {
     items: [{ href: "spending-sources", text: "Change", visuallyHiddenText: "question 14" }]
